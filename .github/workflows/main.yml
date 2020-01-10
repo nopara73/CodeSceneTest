@@ -4,19 +4,9 @@ jobs:
   jenkinsfile-runner-prepackaged:
     runs-on: ubuntu-latest
     steps:
-    - name: pwd
-      run: pwd
-    - name: ls
-      run: ls
-    - name: cd ..
-      run: cd ..
-    - name: ls
-      run: ls
-    - name: Make Plugin Executable
-      run: chmod +x ./install_jenkins_plugin.sh
     - uses: actions/checkout@master
     - name: Install CodeScene
-      run: ./install_jenkins_plugin.sh -d ./plugins -a codescene
+      run: curl http://mirrors.jenkins-ci.org/plugins/codescene/latest/codescene.hpi > /var/lib/jenkins/plugins/codescene.hpi
     - name: jenkinsfile-runner-prepackaged
       uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
       env:

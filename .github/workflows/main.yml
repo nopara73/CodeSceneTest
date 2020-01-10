@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: ls
+      run: ls /var/lib/jenkins/plugins
+    - name: ls
+      run: ls /var/lib/jenkins
     - name: Install CodeScene
       run: curl http://mirrors.jenkins-ci.org/plugins/codescene/latest/codescene.hpi > /var/lib/jenkins/plugins/codescene.hpi
     - name: jenkinsfile-runner-prepackaged

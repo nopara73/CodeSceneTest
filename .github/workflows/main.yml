@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Install CodeScene
-      run: sudo ./install_jenkins_plugin.sh -d ./plugins -a codescene
+      run: sh ./install_jenkins_plugin.sh -d ./plugins -a codescene
     - name: jenkinsfile-runner-prepackaged
       uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
       env:

@@ -5,6 +5,9 @@ node {
         stage ('Clone') {
         	checkout scm
         }
+	stage ('Clean Packages') {
+        	mvn 'clean package'
+        }
         stage ('Build') {
         	sh "echo 'shell scripts to build project...'"
         }

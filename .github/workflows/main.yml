@@ -6,13 +6,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: ls
-      run: sudo ls /var/lib/jenkins
-    - name: mkdir
-      run: sudo mkdir /var/lib/jenkins/plugins
+      run: ls /usr/share/jenkins/
     - name: ls
-      run: sudo ls /var/lib/jenkins/plugins
+      run: sudo ls /usr/share/jenkins/ref/plugins
     - name: Install CodeScene
-      run: sudo curl http://mirrors.jenkins-ci.org/plugins/codescene/latest/codescene.hpi > /var/lib/jenkins/plugins/codescene.hpi
+      run: sudo curl http://mirrors.jenkins-ci.org/plugins/codescene/latest/codescene.hpi > /usr/share/jenkins/ref/plugins/codescene.hpi
     - name: jenkinsfile-runner-prepackaged
       uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
       env:
